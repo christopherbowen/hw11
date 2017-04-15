@@ -15,15 +15,22 @@
 #include <stdlib.h>		/* For exit */
 #include <string.h>
 
+#define SIZE 21
 /* Function Prototypes */
 void Usage(char** info);
+void ReadFile(char *dataFile1, float data[]);
 
 /* Main Program */
 int main(int argc, char *argv[])
 {
+    float data[SIZE];
     if(argc != 2 || strcmp((argv[1]), "--help") == 0)
     {
         Usage(argv);
+    }
+    else
+    {
+        ReadFile(argv[1], data);  //or "strcpy(In, argv[1])"
     }
 	return 0;
 }
@@ -31,8 +38,18 @@ int main(int argc, char *argv[])
 void Usage(char** info)
 {
     printf("Error Opening\n");
-    printf("Usage <filename>\n");
+    printf("Usage <waves.txt>\n");
     exit(1);
 }
-
-
+void ReadFile(char *dataFile1, float data[])
+{
+    FILE *InF;
+    InF = fopen(dataFile1, "r");
+    if(InF == NULL)
+    {
+        printf("Cannot read file, check for errors!\n");
+        exit(1);
+    }
+    printf("File read successful!!\n");
+    return;
+}
