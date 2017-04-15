@@ -3,6 +3,7 @@
  *
  *       Filename:  teamAwesome_hw11_task1.h
  *
+ *
  *    Description:  the header file for the house sample
  *
  *        Version:  1.0
@@ -15,13 +16,14 @@
  *
  * =====================================================================================
  */
-struct House{
-int num,
-char name[],
-float price
+struct House
+{
+int num;
+char name[81];
+float price;
 };
 /* Function Headers */
-struct house InputHouse(void);
-void PrintHouse(char *name, struct house h);
-int ComparePrices(struct house first, struct house second);
+struct House InputHouse(void);
+void PrintHouse(char *name, struct House h);
+int ComparePrices(struct House first, struct House second);
 
