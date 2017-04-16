@@ -19,6 +19,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "teamAwesome_hw11_task1.h" // Rename this to your name name_hw#_task#.h
 /* Function Prototypes */
 struct House InputHouse(void)
@@ -29,7 +30,7 @@ struct House InputHouse(void)
     printf("Enter in a street number: ");
     scanf("%d", &home.num);
     printf("\nEnter a street name: ");
-    while((c = getchar())!= '\n')
+    while((c = getchar())!= '\n'&& strlen(home.name)!=1)
     {
         home.name[count]=c;
         count++;
@@ -40,7 +41,7 @@ struct House InputHouse(void)
 }
 void PrintHouse(char *name, struct House h)
 {
-    printf("%s: at %d %s for [%f]\n", name, h.num, h.name, h.price);
+    printf("%s: at %d %s for [%.2f]\n", name, h.num, h.name, h.price);
     return;
 }
 int ComparePrices(struct House first, struct House second)
