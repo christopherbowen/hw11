@@ -29,9 +29,9 @@ int main(int argc, char* argv[])
 	struct House secondHouse = InputHouse();
 
 	PrintHouse("first house:", firstHouse);  
-	printf("\n\n");
+	printf("\n");
 	PrintHouse("second house", secondHouse);
-	printf("\n\n");
+	printf("\n");
 
 	int comparison = ComparePrices(firstHouse, secondHouse);
 	switch(comparison)
