@@ -24,17 +24,15 @@
 /* Function Prototypes */
 struct House InputHouse(void)
 {
-    int count = 0;
-    char c;
     struct House home;
     printf("Enter in a street number: ");
     scanf("%d", &home.num);
     printf("\nEnter a street name: ");
-    while((c = getchar())!= '\n'&& strlen(home.name)!=1)
+    scanf("%s", home.name);
+    /*while(scanf(" %c", &home.name[count])!='\n')
     {
-        home.name[count]=c;
         count++;
-    }
+    }*/
     printf("Enter the price: ");
     scanf("%f", &home.price);
     return home;
