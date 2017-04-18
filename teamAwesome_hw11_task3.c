@@ -34,8 +34,11 @@ int main(int argc, char *argv[])
 		Usage();
 		exit(1);
 	}
-	
-	
+	else 
+	{
+		ReadFile();
+		exit(1);
+	}
 	return 0;
 }
 
@@ -43,8 +46,9 @@ int main(int argc, char *argv[])
 /* Function Defenitions */
 void Usage(void)
 {
-	printf("Could Not Open\n");
+	printf("\nCould Not Open\n");
 	printf("You must use <mp3data.txt>\n");
+	printf("\n");
 	exit(1);;
 }
 
@@ -52,6 +56,7 @@ void ReadFile(void)
 {
 	FILE *mp3;
 	mp3 = fopen(FILEOPEN,"r");
+	fclose(mp3);
 	return;
 }
 
