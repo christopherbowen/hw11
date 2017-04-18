@@ -50,6 +50,8 @@ void Usage(void)
 
 void ReadFile(void)
 {
+	FILE *mp3;
+	mp3 = fopen(FILEOPEN,"r");
 	return;
 }
 
