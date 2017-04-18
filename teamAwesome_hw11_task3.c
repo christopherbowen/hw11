@@ -19,7 +19,8 @@
 /* Function Prototypes */
 void Usage(void);
 void ReadFile(void);
-
+void Layer(void);
+void Rate(void);
 /* Main Program */
 int main(int argc, char *argv[])
 {
@@ -28,10 +29,13 @@ int main(int argc, char *argv[])
 		Usage();
 		exit(1);
 	}
-	if(argc < 1 && strcmp(argv[1], "--help") == 0)
+	if(argc < 2 || argc > 2)
 	{
 		Usage();
+		exit(1);
 	}
+	
+	
 	return 0;
 }
 
@@ -39,11 +43,22 @@ int main(int argc, char *argv[])
 /* Function Defenitions */
 void Usage(void)
 {
-printf("test usage\n");
-	return;
+	printf("Could Not Open\n");
+	printf("You must use <mp3data.txt>\n");
+	exit(1);;
 }
+
 void ReadFile(void)
 {
 	return;
 }
 
+void Layer(void)
+{
+	return;
+}
+
+void Rate(void)
+{
+	return;
+}
